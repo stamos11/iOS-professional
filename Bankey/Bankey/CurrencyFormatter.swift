@@ -6,14 +6,13 @@
 //
 import UIKit
 
-
 struct CurrencyFormatter {
     
-    func makeAttrubutedCurrency(_ amount: Decimal) -> NSMutableAttributedString {
-        
+    func makeAttributedCurrency(_ amount: Decimal) -> NSMutableAttributedString {
         let tuple = breakIntoDollarsAndCents(amount)
         return makeBalanceAttributed(dollars: tuple.0, cents: tuple.1)
     }
+    
     // Converts 929466.23 > "929,466" "23"
     func breakIntoDollarsAndCents(_ amount: Decimal) -> (String, String) {
         let tuple = modf(amount.doubleValue)
@@ -24,22 +23,21 @@ struct CurrencyFormatter {
         return (dollars, cents)
     }
     
+    // Converts 929466 > 929,466
     private func convertDollar(_ dollarPart: Double) -> String {
-        
-        let dollarWithDecimal = dollarsFormatted(dollarPart)
-        // "$929,466,00
+        let dollarsWithDecimal = dollarsFormatted(dollarPart) // "$929,466.00"
         let formatter = NumberFormatter()
         let decimalSeparator = formatter.decimalSeparator! // "."
-        let dollarComponents = dollarWithDecimal.components(separatedBy: decimalSeparator) // "$929,466" "00"
+        let dollarComponents = dollarsWithDecimal.components(separatedBy: decimalSeparator) // "$929,466" "00"
+        let dollars = dollarComponents.first! // "$929,466"
+//        dollars.removeFirst() // "929,466"
         
-        var dollars = dollarComponents.first! // "$929,466"
-        dollars.removeFirst()// "929,466
+                return dollars
         
-        return dollars
     }
-    // converts 0.23 > 23
+    
+    // Convert 0.23 > 23
     private func convertCents(_ centPart: Double) -> String {
-        
         let cents: String
         if centPart == 0 {
             cents = "00"
@@ -48,6 +46,7 @@ struct CurrencyFormatter {
         }
         return cents
     }
+    
     // Converts 929466 > $929,466.00
     func dollarsFormatted(_ dollars: Double) -> String {
         let formatter = NumberFormatter()
@@ -55,24 +54,25 @@ struct CurrencyFormatter {
         formatter.usesGroupingSeparator = true
         
         if let result = formatter.string(from: dollars as NSNumber) {
-            return result
+            let formattedAmount = result.replacingOccurrences(of: formatter.currencySymbol ?? "", with: "").trimmingCharacters(in: .whitespaces)
+                    return formattedAmount
         }
+        
         return ""
     }
     
     private func makeBalanceAttributed(dollars: String, cents: String) -> NSMutableAttributedString {
-        let dollarsSignAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .callout), .baselineOffset: 8]
+        let dollarSignAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .callout), .baselineOffset: 8]
         let dollarAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .title1)]
         let centAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .callout), .baselineOffset: 8]
         
-        let rootString = NSMutableAttributedString(string: "$", attributes: dollarsSignAttributes)
-        let dollarsString = NSAttributedString(string: dollars, attributes: dollarAttributes)
+        let rootString = NSMutableAttributedString(string: "$", attributes: dollarSignAttributes)
+        let dollarString = NSAttributedString(string: dollars, attributes: dollarAttributes)
         let centString = NSAttributedString(string: cents, attributes: centAttributes)
         
-        rootString.append(dollarsString)
+        rootString.append(dollarString)
         rootString.append(centString)
         
         return rootString
     }
-    
 }

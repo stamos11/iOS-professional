@@ -23,7 +23,7 @@ class AccountSummaryCell: UITableViewCell {
         let balance: Decimal
         
         var balanceAttributedString: NSAttributedString {
-            return CurrencyFormatter().makeAttrubutedCurrency(balance)
+            return CurrencyFormatter().makeAttributedCurrency(balance)
         }
         
         }
