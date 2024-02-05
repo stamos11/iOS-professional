@@ -8,14 +8,13 @@
 import Foundation
 import UIKit
 
+enum AccountType: String, Codable {
+    case Banking
+    case CreditCard
+    case Investment
+}
+
 class AccountSummaryCell: UITableViewCell {
-    
-    
-    enum AccountType: String {
-        case Banking
-        case Creditcard
-        case Investment
-    }
     
     struct ViewModel {
         let accountType: AccountType
@@ -42,6 +41,7 @@ class AccountSummaryCell: UITableViewCell {
     
     static let reuseID = "AccountSummaryCell"
     static let rowHeight: CGFloat = 112
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
@@ -151,7 +151,7 @@ extension AccountSummaryCell {
         case .Banking:
             underlineView.backgroundColor = appColor
             balanceLabel.text = "Current balance"
-        case .Creditcard:
+        case .CreditCard:
             underlineView.backgroundColor = .systemOrange
             balanceLabel.text = "Current balance"
         case .Investment:
