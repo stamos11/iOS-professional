@@ -20,6 +20,8 @@
 		3EA042752B433D5C0086D10A /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA042742B433D5C0086D10A /* AccountSummaryViewController.swift */; };
 		3EA042772B4341930086D10A /* AccountSummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA042762B4341930086D10A /* AccountSummaryHeaderView.swift */; };
 		3EA042792B4341D70086D10A /* AccountSummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EA042782B4341D70086D10A /* AccountSummaryHeaderView.xib */; };
+		3EA744D92B73E01B008D4A28 /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA744D82B73E01B008D4A28 /* SkeletonLoadable.swift */; };
+		3EA744DB2B73E480008D4A28 /* SkeletonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA744DA2B73E480008D4A28 /* SkeletonCell.swift */; };
 		3EA755DF2B5D5D1400F4107F /* DecimalUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA755DE2B5D5D1400F4107F /* DecimalUtil.swift */; };
 		3EA755E12B5D5D7E00F4107F /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA755E02B5D5D7E00F4107F /* CurrencyFormatter.swift */; };
 		3EA755F02B5DA4AC00F4107F /* CurrencyFormaterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA755EF2B5DA4AC00F4107F /* CurrencyFormaterTests.swift */; };
@@ -60,6 +62,8 @@
 		3EA042742B433D5C0086D10A /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
 		3EA042762B4341930086D10A /* AccountSummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryHeaderView.swift; sourceTree = "<group>"; };
 		3EA042782B4341D70086D10A /* AccountSummaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSummaryHeaderView.xib; sourceTree = "<group>"; };
+		3EA744D82B73E01B008D4A28 /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
+		3EA744DA2B73E480008D4A28 /* SkeletonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCell.swift; sourceTree = "<group>"; };
 		3EA755DE2B5D5D1400F4107F /* DecimalUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalUtil.swift; sourceTree = "<group>"; };
 		3EA755E02B5D5D7E00F4107F /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		3EA755E62B5DA3A000F4107F /* BankeyUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankeyUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				3E6531382B56AF2900D06A1B /* AccountSummaryCell.swift */,
+				3EA744D82B73E01B008D4A28 /* SkeletonLoadable.swift */,
+				3EA744DA2B73E480008D4A28 /* SkeletonCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -334,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E490FB12B41A33500E42614 /* UIViewController+Utils.swift in Sources */,
+				3EA744DB2B73E480008D4A28 /* SkeletonCell.swift in Sources */,
 				3EBCC7DD2B652D77006BC54E /* Date+Utils.swift in Sources */,
 				3E4042642AF54B9F0033A03F /* LoginView.swift in Sources */,
 				3EAB31C02B2E2FB50014B632 /* LocalState.swift in Sources */,
@@ -351,6 +358,7 @@
 				3E490FB32B41A53100E42614 /* MainViewController.swift in Sources */,
 				3EA042752B433D5C0086D10A /* AccountSummaryViewController.swift in Sources */,
 				3E40424E2AF545AA0033A03F /* AppDelegate.swift in Sources */,
+				3EA744D92B73E01B008D4A28 /* SkeletonLoadable.swift in Sources */,
 				3EFD4FC32B0633BC001CC689 /* OnboardingContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
