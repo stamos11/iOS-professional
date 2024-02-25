@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E5807002B8BB67E0012EFA8 /* UIResponder+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5806FF2B8BB67E0012EFA8 /* UIResponder+Utils.swift */; };
 		3EAA60FF2B7D137600848AB3 /* PasswordStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAA60FE2B7D137600848AB3 /* PasswordStatusView.swift */; };
 		3EAA61212B7D549600848AB3 /* PasswordCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAA61202B7D549600848AB3 /* PasswordCriteria.swift */; };
 		3ECE81772B7BB217006BA260 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE81762B7BB217006BA260 /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E5806FF2B8BB67E0012EFA8 /* UIResponder+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Utils.swift"; sourceTree = "<group>"; };
 		3EAA60FE2B7D137600848AB3 /* PasswordStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStatusView.swift; sourceTree = "<group>"; };
 		3EAA61202B7D549600848AB3 /* PasswordCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCriteria.swift; sourceTree = "<group>"; };
 		3ECE81732B7BB217006BA260 /* Password.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Password.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E5806FE2B8BB62B0012EFA8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3E5806FF2B8BB67E0012EFA8 /* UIResponder+Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		3ECE816A2B7BB217006BA260 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +70,7 @@
 		3ECE81752B7BB217006BA260 /* Password */ = {
 			isa = PBXGroup;
 			children = (
+				3E5806FE2B8BB62B0012EFA8 /* Utils */,
 				3ECE818A2B7BB286006BA260 /* Files */,
 				3ECE81762B7BB217006BA260 /* AppDelegate.swift */,
 				3ECE817A2B7BB217006BA260 /* ViewController.swift */,
@@ -160,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3ECE817B2B7BB217006BA260 /* ViewController.swift in Sources */,
+				3E5807002B8BB67E0012EFA8 /* UIResponder+Utils.swift in Sources */,
 				3EAA61212B7D549600848AB3 /* PasswordCriteria.swift in Sources */,
 				3ECE81772B7BB217006BA260 /* AppDelegate.swift in Sources */,
 				3ED4CA802B7CE56E000D1610 /* PasswordCriteriaView.swift in Sources */,
